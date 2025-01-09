@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #7209b7;
+  --primary-color: #ffd500;
+  --accent-color: #f72585;
+  --fg-color: #560bad;
+  --correct-color: #9cf945;
+  --wrong-color: #f72634;
+  --border-radius: 1rem;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-size: 16px;
+  color: white;
+}
+
+hr {
+  max-width: 80vw;
+  margin: 0 auto;
+  border: 1px solid var(--accent-color);
+}
+
+a {
+  color: white;
+}
+
+.header {
+  position: relative;
+  padding: 1rem;
+}
+
+.header-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  display: none;
+  width: 150px;
+  height: 150px;
+  transform: translateY(-50%);
+}
+
+.header-content {
+  margin-bottom: 1rem;
+}
+
+.header-title {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  line-height: 1.1em;
+}
+
+.header-description {
+  max-width: 500px;
+  line-height: 1.5em;
+}
+
+.header-disclaimer {
+  font-weight: 200;
+  font-style: italic;
+  color: var(--primary-color);
+}
+
+.header-jackpot {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  color: var(--fg-color);
+}
+
+.jackpot-label {
+  text-transform: uppercase;
+}
+
+.jackpot-amount {
+  font-size: 2rem;
+}
+
+.game {
+  padding: 1rem;
+}
+
+.guide {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  color: var(--fg-color);
+}
+
+.guide-prompt {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 0;
+}
+
+.stats-box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  color: var(--fg-color);
+}
+
+.game-board {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.board-box {
+  width: 20%;
+  height: 75px;
+  border: 1px solid white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.board-box.correct {
+  background-color: var(--correct-color);
+}
+
+.board-box.wrong {
+  background-color: var(--wrong-color);
+}
+
+.board-box-list {
+  --y: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(var(--y));
+  transition: transform 3s ease-in-out;
+}
+
+.board-box-number {
+  font-size: 4rem;
+}
+
+.play-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--accent-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  outline: none;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.footer {
+  padding: 1rem;
+  border-top: 1px solid white;
+}
+
+@media screen and (min-width: 768px) {
+  .header,
+  .footer,
+  .game {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .header-jackpot {
+    max-width: fit-content;
+  }
+
+  .header-icon {
+    display: block;
+  }
+}
